@@ -34,11 +34,11 @@ Instead of relying on static blurs or solid overlays, it generates a dynamic par
 
 Import the module directly into your HTML document or build pipeline.
 
-!!!html
+```html
 <head>
   <script type="module" src="./path/to/particle-spoiler.js"></script>
 </head>
-!!!
+```
 
 ---
 
@@ -46,21 +46,21 @@ Import the module directly into your HTML document or build pipeline.
 
 Wrap the target content inside the `<particle-spoiler>` tag. The component automatically adjusts its internal canvas to fit the slotted content dimensions.
 
-!!!html
+```html
 <particle-spoiler>
   <img src="https://picsum.photos/600/400" alt="Obscured content" />
 </particle-spoiler>
-!!!
+```
 
 Control the outer dimensions of the component via standard CSS:
 
-!!!css
+```css
 particle-spoiler {
   width: 100%;
   max-width: 600px;
   aspect-ratio: 16 / 9;
 }
-!!!
+```
 
 ---
 
@@ -94,7 +94,7 @@ The component dispatches custom events that bubble up to the DOM.
 
 ### Implementation Example (Authorization Gate)
 
-!!!html
+```html
 <particle-spoiler id="premiumContent" locked>
   <img src="premium-image.jpg" alt="Premium Content" />
 </particle-spoiler>
@@ -114,7 +114,7 @@ The component dispatches custom events that bubble up to the DOM.
     spoiler.reveal();
   }
 </script>
-!!!
+```
 
 ---
 
@@ -122,7 +122,7 @@ The component dispatches custom events that bubble up to the DOM.
 
 Base parameters for the physics engine are centralized in the `CONFIG` object within the module scope of `particle-spoiler.js`. These can be modified prior to build/deployment to alter the visual behavior of the particles.
 
-!!!javascript
+```javascript
 const CONFIG = {
     density: 1500,               // Total particle count
     baseVelocity: 0.15,          // Maximum coordinate displacement per frame
@@ -132,7 +132,7 @@ const CONFIG = {
     revealTimeMs: 600            // Transition duration
     // ...
 };
-!!!
+```
 
 ---
 
